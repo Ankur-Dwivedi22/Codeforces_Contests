@@ -34,6 +34,5 @@ This repository contains my solutions from various **Codeforces contests**, orga
 
 Improve competitive programming skills and perform better in contests.
 
----
 
 ⭐ Star this repo if you're also active on Codeforces!
