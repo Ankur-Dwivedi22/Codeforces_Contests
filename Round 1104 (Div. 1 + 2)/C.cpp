@@ -32,7 +32,8 @@ const double PI = 3.14159265358979323846;
     for (int i = 0; i < n; i++) \
     {                           \
         cout << arr[i] << " ";  \
-    }
+    }                           \
+    cout << endl;
 
 using namespace std;
 
@@ -81,8 +82,47 @@ void SieveOfEratosthenes()
     }
 }
 
+const int M = 1e9 + 7;
+
+int power(int b, int e)
+{
+    b = (b % M);
+    int ans = 1;
+    while (e > 0)
+    {
+        if (e % 2 == 1)
+        {
+            ans = (ans * b) % M;
+        }
+        b = (b * b) % M;
+        e /= 2;
+    }
+
+    return ans;
+}
+
+int modInverse(int n)
+{
+    return power(n, M - 2);
+}
+
 void solve()
 {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    ain(i, a, n);
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (a[i] > a[i + 1])
+        {
+            swap(a[i], a[i + 1]);
+            a[i + 1] += a[i];
+        }
+    }
+
+    cout(a[n - 1]);
 }
 
 int32_t main()
